@@ -134,6 +134,33 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  var formBtn = document.querySelector('[data-form-btn]');
+  formBtn.disabled = false; // Enable the button
+
+  var form = document.querySelector('[data-form]');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Gather your form data
+    var templateParams = {
+      name: document.querySelector('[name="fullname"]').value,
+      email: document.querySelector('[name="email"]').value,
+      message: document.querySelector('[name="message"]').value,
+    };
+
+    // Send the email
+    emailjs.send('service_v46psdi', 'template_daa3wwp', templateParams)
+      .then(function(response) {
+         console.log('Email sent successfully.');
+      })
+      .catch(function(error) {
+         console.log('Failed to send email.');
+      });
+  });
+});
+
+
 
 
 // page navigation variables
