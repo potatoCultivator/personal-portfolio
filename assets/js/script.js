@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gather your form data
     var templateParams = {
       name: document.querySelector('[name="fullname"]').value,
+      from_name: document.querySelector('[name="fullname"]').value,
       email: document.querySelector('[name="email"]').value,
       message: document.querySelector('[name="message"]').value,
     };
