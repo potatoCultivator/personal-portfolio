@@ -1871,6 +1871,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
+  #messageBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+    color: white; /* Change text color to white */
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+  }
 
 
   /**

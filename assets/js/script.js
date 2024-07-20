@@ -135,7 +135,7 @@ for (let i = 0; i < formInputs.length; i++) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // var formBtn = document.querySelector('[data-form-btn]');
+  var formBtn = document.querySelector('[data-form-btn]');
   formBtn.disabled = false; // Enable the button
 
   var form = document.querySelector('[data-form]');
@@ -152,19 +152,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Send the email
     emailjs.send('service_v46psdi', 'template_daa3wwp', templateParams)
-      .then(function(response) {
-        // dialog.style.display = "block";
-        // openDialogAndScroll();
-        alert('Your message has been sent!');
-         console.log('Email sent successfully.');
-         // Clear the form after successful email send
-        form.reset();
-      })
-      .catch(function(error) {
-         console.log('Failed to send email.');
-      });
+    .then(function(response) {
+      // Show custom message
+      showMessage('Your message has been sent!');
+      console.log('Email sent successfully.');
+      // Clear the form after successful email send
+      form.reset();
+    })
+    .catch(function(error) {
+      console.log('Failed to send email.');
+    });
   });
 });
+
+function showMessage(message) {
+  var messageBox = document.getElementById('messageBox');
+  messageBox.textContent = message;
+  messageBox.style.display = 'block';
+
+  // Hide the message box after 2 seconds
+  setTimeout(function() {
+    messageBox.style.display = 'none';
+  }, 2000);
+}
 
 
 // page navigation variables
