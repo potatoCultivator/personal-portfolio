@@ -1878,5 +1878,56 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
   .timeline-text { max-width: 700px; }
+  
+  /* Dialog Styles */
+  .dialog {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 35%;
+    top: 30%;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--eerie-black-2); /* Fallback color */
+    background-color: rgba(0,0,0,0.0); /* Black w/ opacity */
+  }
 
+  .dialog-content {
+    position: relative; /* Keeps the close button positioned correctly */
+    background-color: var(--onyx);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    padding-top: 50px; /* Increase top padding to avoid overlap with the close button */
+    border: 1px solid var(--jet);
+    width: 80%; /* Adjust width as needed */
+    border-radius: 20px;
+    box-shadow: var(--shadow-3);
+    text-align: center; /* Centers text horizontally */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+     color: white; /* Sets text color to white */
+  }
+
+  .close-btn {
+    position: absolute; /* Absolute positioning relative to .dialog-content */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    color: var(--white-1);
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px; /* Adds padding to move it from the very edge */
+    color: var(--orange-yellow-crayola);
+  }
+
+  .close-btn:hover,
+  .close-btn:focus {
+    color: var(--bittersweet-shimmer);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* Add more styles for the dialog content here */
 }

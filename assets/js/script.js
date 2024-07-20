@@ -135,7 +135,7 @@ for (let i = 0; i < formInputs.length; i++) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var formBtn = document.querySelector('[data-form-btn]');
+  // var formBtn = document.querySelector('[data-form-btn]');
   formBtn.disabled = false; // Enable the button
 
   var form = document.querySelector('[data-form]');
@@ -153,7 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Send the email
     emailjs.send('service_v46psdi', 'template_daa3wwp', templateParams)
       .then(function(response) {
+        dialog.style.display = "block";
          console.log('Email sent successfully.');
+         // Clear the form after successful email send
+        form.reset();
       })
       .catch(function(error) {
          console.log('Failed to send email.');
@@ -161,7 +164,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Get the modal
+var dialog = document.getElementById("emailDialog");
 
+// Get the <span> element that closes the modal
+var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+closeBtn.onclick = function() {
+  dialog.style.display = "none";
+}
+
+// Optional: Close the dialog when the user clicks anywhere outside of it
+window.onclick = function(event) {
+  if (event.target == dialog) {
+    dialog.style.display = "none";
+  }
+}
 
 
 // page navigation variables
