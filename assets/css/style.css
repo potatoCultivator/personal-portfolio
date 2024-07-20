@@ -1876,7 +1876,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: lightblue;
+    background-color:  var(--jet);
     color: white; /* Change text color to white */
     padding: 20px;
     border-radius: 5px;

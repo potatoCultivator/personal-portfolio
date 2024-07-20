@@ -154,8 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
     emailjs.send('service_v46psdi', 'template_daa3wwp', templateParams)
     .then(function(response) {
       // Show custom message
-      showMessage('Your message has been sent!');
+      var prevTitle = document.title;
+      document.title = 'Email Sent!';
+      alert('Your email has been sent!');
+      // showMessage('Your message has been sent!');
       console.log('Email sent successfully.');
+      document.title = prevTitle;
       // Clear the form after successful email send
       form.reset();
     })
