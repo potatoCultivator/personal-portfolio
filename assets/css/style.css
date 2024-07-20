@@ -1929,5 +1929,40 @@ textarea.form-input::-webkit-resizer { display: none; }
     cursor: pointer;
   }
 
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .dialog {
+      display: none; /* Hidden by default */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full screen width */
+      height: 100%; /* Full screen height */
+      display: flex; /* Enables flexbox layout */
+      justify-content: center; /* Centers horizontally */
+      align-items: center; /* Centers vertically */
+      overflow: auto; /* Enables scroll for the dialog content if needed */
+      position: relative; /* Needed for absolute positioning of children */
+    }
+  
+    .dialog-content {
+      margin: auto; /* Centers the content within the dialog */
+      width: 90%; /* Take up more screen width */
+      padding-top: 20px; /* Adjust if necessary for the close button */
+      max-height: 80%; /* Example max-height, adjust as needed */
+      overflow-y: auto; /* Enables scrolling within the content if it exceeds max-height */
+      text-align: center; /* Centers text horizontally */
+      display: flex; /* Enables flexbox layout */
+      flex-direction: column; /* Stacks children vertically */
+      justify-content: center; /* Centers children vertically */
+    }
+  
+    .close-btn {
+      position: absolute; /* Positions the button absolutely within the dialog */
+      top: 10px; /* Adjusted for better accessibility */
+      right: 10px; /* Adjusted for better accessibility */
+      color: var(--orange-yellow-crayola);
+    }
+  }
+
 /* Add more styles for the dialog content here */
 }

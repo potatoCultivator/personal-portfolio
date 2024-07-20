@@ -153,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Send the email
     emailjs.send('service_v46psdi', 'template_daa3wwp', templateParams)
       .then(function(response) {
-        dialog.style.display = "block";
+        // dialog.style.display = "block";
+        openDialogAndScroll();
          console.log('Email sent successfully.');
          // Clear the form after successful email send
         form.reset();
@@ -170,6 +171,28 @@ var dialog = document.getElementById("emailDialog");
 // Get the <span> element that closes the modal
 var closeBtn = document.getElementsByClassName("close-btn")[0];
 
+// Function to open the dialog and scroll to it
+function openDialogAndScroll() {
+  // Assuming you have a function to display the dialog
+  showDialog();
+
+  // Assuming .dialog is the class of your dialog container
+  var dialogElement = document.querySelector('.dialog');
+
+  // Scroll to the dialog element
+  if (dialogElement) {
+    dialogElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+}
+
+// Example function that shows the dialog
+// You might already have this implemented
+function showDialog() {
+  // Your code to display the dialog
+  document.querySelector('.dialog').style.display = 'flex';
+}
+
+// Call openDialogAndScroll() when you want to open the dialog and scroll to it
 
 // When the user clicks on <span> (x), close the modal
 closeBtn.onclick = function() {
